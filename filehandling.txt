@@ -1,0 +1,36 @@
+package filehandling;
+
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class Main {
+
+	public static void main(String[] args) throws IOException {
+	    File file = new File("example.txt");
+	    if(file.createNewFile()) {
+	    	System.out.println("file created");
+	    
+	    }
+	    else {
+	    	System.out.println("file already exist");
+	    	FileReader fr = new FileReader("example.txt");
+	    	int charactorascii;
+	    	while((charactorascii = fr.read()) !=-1) {
+	    		char ch = (char) charactorascii;
+	    		System.out.println(ch);
+	    	}
+	    	
+//	    	BufferedWriter bw = new BufferedWriter(new FileWriter("example.txt"));
+//	    	bw.write("This is buffered writer");
+//	    	bw.close();
+//	    	FileWriter fw = new FileWriter("example.txt"); //->Append
+//	    	fw.write("overwitten");
+//	    	fw.close();
+	    }
+
+	}
+
+}
